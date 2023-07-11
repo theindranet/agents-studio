@@ -150,7 +150,7 @@ export default function LeftPanel() {
                         className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
                         aria-hidden="true"
                     />
-                    <span aria-hidden="true">8000 tokens remaining</span>
+                    <span aria-hidden="true">8050 tokens remaining</span>
                     </a>
                 </li>
                 </ul>

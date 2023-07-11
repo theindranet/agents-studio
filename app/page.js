@@ -1,31 +1,24 @@
 "use client"
 
-import LeftPanel from './left-panel.js'
-import RightPanel from './right-panel.js'
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import Agents from '../pages/Agents.js';
-import Runs from '../pages/Runs.js';
-import Evals from '../pages/Evals.js';
-
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import {
     ChartPieIcon,
     FolderIcon,
     UsersIcon,
   } from '@heroicons/react/24/outline'
+import LeftPanel from './left-panel.js'
+import RightPanel from './right-panel.js'
+import Agents from '../pages/Agents.js'
+import AgentBuilder from '../pages/AgentBuilder.js'
+import Runs from '../pages/Runs.js'
+import Evals from '../pages/Evals.js'
 
 const navigation = [
     { name: 'Agents', href: '/Agents', icon: UsersIcon, current: true, component: Agents },
+    { name: 'Agent Builder', href: '/AgentBuilder', icon: UsersIcon, current: true, component: AgentBuilder },
     { name: 'Runs', href: '/Runs', icon: FolderIcon, current: false, component: Runs },
     { name: 'Evals', href: '/Evals', icon: ChartPieIcon, current: false, component: Evals },
 ]
-
-import Timeline  from './timeline.js'
-import AgentBuilder from './agentBuilder.js'
-import Agents from './agents.js'
-
-import Timeline  from './timeline.js'
-import AgentBuilder from './agentBuilder.js'
-import Agents from './agents.js'
 
 export default function Home() {
   return (
