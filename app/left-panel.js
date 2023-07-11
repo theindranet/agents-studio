@@ -8,11 +8,9 @@ import Evals from '../pages/Evals';
 
 import {
     Bars3Icon,
-    CalendarIcon,
     ChartPieIcon,
-    DocumentDuplicateIcon,
+    CircleStackIcon,
     FolderIcon,
-    HomeIcon,
     UsersIcon,
     XMarkIcon,
   } from '@heroicons/react/24/outline'
@@ -142,6 +140,18 @@ export default function LeftPanel() {
                         </li>
                     ))}
                     </ul>
+                </li>
+                <li className="-mx-6 mt-auto">
+                    <a
+                    href="#"
+                    className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800"
+                    >
+                    <CircleStackIcon
+                        className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
+                        aria-hidden="true"
+                    />
+                    <span aria-hidden="true">8000 tokens remaining</span>
+                    </a>
                 </li>
                 </ul>
             </nav>

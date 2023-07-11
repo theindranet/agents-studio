@@ -1,6 +1,5 @@
 "use client"
 
-import Timeline  from './timeline.js'
 import LeftPanel from './left-panel.js'
 import RightPanel from './right-panel.js'
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
@@ -8,19 +7,11 @@ import Agents from '../pages/Agents.js';
 import Runs from '../pages/Runs.js';
 import Evals from '../pages/Evals.js';
 
-
-
 import {
-    Bars3Icon,
-    CalendarIcon,
     ChartPieIcon,
-    DocumentDuplicateIcon,
     FolderIcon,
-    HomeIcon,
     UsersIcon,
-    XMarkIcon,
   } from '@heroicons/react/24/outline'
-import { classNames } from './utils'
 
 const navigation = [
     { name: 'Agents', href: '/Agents', icon: UsersIcon, current: true, component: Agents },
@@ -28,6 +19,13 @@ const navigation = [
     { name: 'Evals', href: '/Evals', icon: ChartPieIcon, current: false, component: Evals },
 ]
 
+import Timeline  from './timeline.js'
+import AgentBuilder from './agentBuilder.js'
+import Agents from './agents.js'
+
+import Timeline  from './timeline.js'
+import AgentBuilder from './agentBuilder.js'
+import Agents from './agents.js'
 
 export default function Home() {
   return (
@@ -49,21 +47,3 @@ export default function Home() {
       </Router>
   )
 }
-// export default function Home() {
-
-//   return (
-//     <>
-//       <div>
-//         <LeftPanel />
-//         <main className="py-10 lg:pl-72">
-//           <div className="px-4 sm:px-6 lg:px-8">
-//             {/* Center Content */}
-//             <Timeline />
-//           </div>
-//         </main>
-//       </div>
-
-//       <RightPanel/>
-//     </>
-//   )
-// }
