@@ -1,5 +1,11 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom';
+import Agents from '../pages/Agents';
+import Runs from '../pages/Runs';
+import Evals from '../pages/Evals';
+
+
 import {
     Bars3Icon,
     CalendarIcon,
@@ -10,12 +16,12 @@ import {
     UsersIcon,
     XMarkIcon,
   } from '@heroicons/react/24/outline'
-  import { classNames } from './utils'
+import { classNames } from './utils'
 
 const navigation = [
-    { name: 'Agents', href: '#', icon: UsersIcon, current: true },
-    { name: 'Runs', href: '#', icon: FolderIcon, current: false },
-    { name: 'Evals', href: '#', icon: ChartPieIcon, current: false },
+    { name: 'Agents', href: '/Agents', icon: UsersIcon, current: true, component: Agents },
+    { name: 'Runs', href: '/Runs', icon: FolderIcon, current: false, component: Runs },
+    { name: 'Evals', href: '/Evals', icon: ChartPieIcon, current: false, component: Evals },
 ]
 
 export default function LeftPanel() {
@@ -79,18 +85,18 @@ export default function LeftPanel() {
                                 <ul role="list" className="-mx-2 space-y-1">
                                 {navigation.map((item) => (
                                     <li key={item.name}>
-                                    <a
-                                        href={item.href}
-                                        className={classNames(
-                                        item.current
-                                            ? 'bg-gray-800 text-white'
-                                            : 'text-gray-400 hover:text-white hover:bg-gray-800',
-                                        'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                                        )}
-                                    >
-                                        <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                                        {item.name}
-                                    </a>
+                                       <Link 
+                                            to={item.href} 
+                                            className={classNames(
+                                                item.current
+                                                ? 'bg-gray-800 text-white'
+                                                : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                                'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                            )}
+                                            >
+                                            <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                            {item.name}
+                                        </Link>
                                     </li>
                                 ))}
                                 </ul>
@@ -121,55 +127,25 @@ export default function LeftPanel() {
                     <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                         <li key={item.name}>
-                        <a
-                            href={item.href}
-                            className={classNames(
-                            item.current
-                                ? 'bg-gray-800 text-white'
-                                : 'text-gray-400 hover:text-white hover:bg-gray-800',
-                            'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                            )}
-                        >
-                            <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                            {item.name}
-                        </a>
+                        <Link 
+                                            to={item.href} 
+                                            className={classNames(
+                                                item.current
+                                                ? 'bg-gray-800 text-white'
+                                                : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                                'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                            )}
+                                            >
+                                            <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                            {item.name}
+                                        </Link>
                         </li>
                     ))}
                     </ul>
                 </li>
-                <li className="-mx-6 mt-auto">
-                    <a
-                    href="#"
-                    className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800"
-                    >
-                    <img
-                        className="h-8 w-8 rounded-full bg-gray-800"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                    />
-                    <span className="sr-only">Your profile</span>
-                    <span aria-hidden="true">Jordan Wick</span>
-                    </a>
-                </li>
                 </ul>
             </nav>
             </div>
-        </div>
-
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
-            <button type="button" className="-m-2.5 p-2.5 text-gray-400 lg:hidden" onClick={() => setSidebarOpen(true)}>
-            <span className="sr-only">Open sidebar</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-            <div className="flex-1 text-sm font-semibold leading-6 text-white">Dashboard</div>
-            <a href="#">
-            <span className="sr-only">Your profile</span>
-            <img
-                className="h-8 w-8 rounded-full bg-gray-800"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-            />
-            </a>
         </div>
     </>
     )
