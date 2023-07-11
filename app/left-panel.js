@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Link } from 'react-router-dom';
 import Agents from '../pages/Agents';
+import AgentBuilder from '@/pages/AgentBuilder';
 import Runs from '../pages/Runs';
 import Evals from '../pages/Evals';
 
@@ -17,9 +18,10 @@ import {
 import { classNames } from './utils'
 
 const navigation = [
-    { name: 'Agents', href: '/Agents', icon: UsersIcon, current: true, component: Agents },
-    { name: 'Runs', href: '/Runs', icon: FolderIcon, current: false, component: Runs },
-    { name: 'Evals', href: '/Evals', icon: ChartPieIcon, current: false, component: Evals },
+    { name: 'Agents', href: '/agents', icon: UsersIcon, current: false, component: Agents },
+    { name: 'Agent Builder', href: '/agent-builder', icon: UsersIcon, current: false, component: AgentBuilder },
+    { name: 'Runs', href: '/runs', icon: FolderIcon, current: false, component: Runs },
+    { name: 'Evals', href: '/evals', icon: ChartPieIcon, current: false, component: Evals },
 ]
 
 export default function LeftPanel() {

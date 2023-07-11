@@ -1,41 +1,7 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
-
-const myAgents = [
-  {
-    name: 'Natalie Portwoman',
-    title: 'Expert manager of inboxes. She\'ll draft emails for you in a snap!',
-    role: 'Executive Assistant',
-    email: 'natalieport@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-  },
-  {
-    name: 'LinkedIn Searcher',
-    title: 'Scrape LinkedIn for tl;dr summaries of users and useful connections',
-    role: 'Caller of an API',
-    email: 'jordanslinkedinscraper@gmail.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-  },
-]
-
-const otherAgents = [
-  {
-    name: 'Jane Cooper',
-    title: 'Regional Paradigm Technician',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    runs: 1684,
-    telephone: '+1-202-555-0170',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-  },
-]
+import { FolderIcon, ChartPieIcon } from '@heroicons/react/20/solid'
+import { myAgents, marketplaceAgents } from '@/test/data'
 
 export default function Agents() {
-
   return (
     <>
         <button
@@ -45,7 +11,7 @@ export default function Agents() {
           New Agent
       </button>
       {/* YOUR AGENTS */}
-      <h2 className="text-gray-500 py-6">My Agents</h2>
+      <h2 className="text-gray-500 py-12">My Agents</h2>
       <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {myAgents.map((person) => (
           <li
@@ -73,8 +39,8 @@ export default function Agents() {
                     href={`mailto:${person.email}`}
                     className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                   >
-                    <EnvelopeIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    Status
+                    <FolderIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    Evals
                   </a>
                 </div>
                 <div className="-ml-px flex w-0 flex-1">
@@ -82,8 +48,8 @@ export default function Agents() {
                     href={`tel:${person.telephone}`}
                     className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                   >
-                    <PhoneIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    Modify
+                    <ChartPieIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    Run
                   </a>
                 </div>
               </div>
@@ -92,10 +58,10 @@ export default function Agents() {
         ))}
       </ul>
       {/* AGENTS IN MARKETPLACE */}
-      <h2 className="text-gray-500 py-6">Marketplace</h2>
+      <h2 className="text-gray-500 py-12">Popular Agents Near Me - San Francisco</h2>
       <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {otherAgents.map((person) => (
-        <li key={person.email} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+      {marketplaceAgents.map((person) => (
+        <li key={person.name} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
           <div className="flex w-full items-center justify-between space-x-6 p-6">
             <div className="flex-1 truncate">
               <div className="flex items-center space-x-3">
@@ -112,20 +78,20 @@ export default function Agents() {
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href={`mailto:${person.email}`}
+                  href='#'
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
-                  <EnvelopeIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                  {person.runs} runs
+                  <FolderIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  {person.runs} Runs
                 </a>
               </div>
               <div className="-ml-px flex w-0 flex-1">
                 <a
-                  href={`tel:${person.telephone}`}
+                  href='#'
                   className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
-                  <PhoneIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                  Try
+                  <ChartPieIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  Try Evals
                 </a>
               </div>
             </div>
