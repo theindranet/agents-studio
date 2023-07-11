@@ -45,7 +45,7 @@ export default function Home() {
               </main>
           </div>
 
-          <RightPanel/>
+          {/* <RightPanel/> */}
       </Router>
   )
 }

@@ -1,3 +1,5 @@
 export default function Evals() {
-  return <h1>Evals Page</h1>;
+  return <div>
+    <h1>Evals Page</h1>
+  </div>
 }
