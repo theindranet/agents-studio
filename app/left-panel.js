@@ -1,10 +1,8 @@
+"use client" 
+
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom';
-import Agents from '../pages/Agents';
-import AgentBuilder from '@/pages/AgentBuilder';
-import Runs from '../pages/Runs';
-import Evals from '../pages/Evals';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import {
@@ -18,10 +16,10 @@ import {
 import { classNames } from './utils'
 
 const navigation = [
-    { name: 'Agents', href: '/agents', icon: UsersIcon, current: false, component: Agents },
-    { name: 'Agent Builder', href: '/agent-builder', icon: UsersIcon, current: false, component: AgentBuilder },
-    { name: 'Runs', href: '/runs', icon: FolderIcon, current: false, component: Runs },
-    { name: 'Evals', href: '/evals', icon: ChartPieIcon, current: false, component: Evals },
+    { name: 'Agents', href: '/agents', icon: UsersIcon, current: false},
+    { name: 'Agent Builder', href: '/agent-builder', icon: UsersIcon, current: false},
+    { name: 'Runs', href: '/runs', icon: FolderIcon, current: false},
+    { name: 'Evals', href: '/evals', icon: ChartPieIcon, current: false},
 ]
 
 export default function LeftPanel() {
@@ -73,7 +71,9 @@ export default function LeftPanel() {
                         {/* Sidebar component, swap this element with another sidebar if you like */}
                         <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
                         <div className="flex h-16 shrink-0 items-center">
-                            <Image src="/logo.png" height="24" width="24" alt="Logo" />
+                            <Link href='/'>
+                                <Image src="/logo.png" height="24" width="24" alt="Logo" />
+                            </Link>
                         </div>
                         <nav className="flex flex-1 flex-col">
                             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -82,7 +82,7 @@ export default function LeftPanel() {
                                 {navigation.map((item) => (
                                     <li key={item.name}>
                                        <Link 
-                                            to={item.href} 
+                                            href={item.href}
                                             className={classNames(
                                                 item.current
                                                 ? 'bg-gray-800 text-white'
@@ -90,9 +90,9 @@ export default function LeftPanel() {
                                                 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                             )}
                                             >
-                                            <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                                            {item.name}
                                         </Link>
+                                        <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                        {item.name}
                                     </li>
                                 ))}
                                 </ul>
@@ -111,7 +111,9 @@ export default function LeftPanel() {
             {/* Sidebar component, swap this element with another sidebar if you like */}
             <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
             <div className="flex h-16 shrink-0 items-center">
-                <Image src="/logo.png" height="24" width="24" alt="Logo" />
+                <Link href='/'>
+                    <Image src="/logo.png" height="24" width="24" alt="Logo" />
+                </Link>
             </div>
             <nav className="flex flex-1 flex-col">
                 <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -120,7 +122,7 @@ export default function LeftPanel() {
                     {navigation.map((item) => (
                         <li key={item.name}>
                         <Link 
-                                            to={item.href} 
+                                            href={item.href} 
                                             className={classNames(
                                                 item.current
                                                 ? 'bg-gray-800 text-white'
