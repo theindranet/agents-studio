@@ -142,7 +142,7 @@ export default function AgentBuilder() {
                     defaultValue={''}
                   />
                 </div>
-                <p className="mt-3 text-sm leading-6 text-gray-600">Write 1-3 sentences about your agent's abilities.</p>
+                <p className="mt-3 text-sm leading-6 text-gray-600">Write 1-3 sentences about your agent&apos;s abilities.</p>
               </div>
 
 

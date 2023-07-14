@@ -13,9 +13,9 @@ export default function Agents() {
       {/* YOUR AGENTS */}
       <h2 className="text-gray-500 py-12">My Agents</h2>
       <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {myAgents.map((person) => (
+        {myAgents.map((person,i) => (
           <li
-            key={person.email}
+            key={`${person.name}-${i}`}
             className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
           >
             <div className="flex flex-1 flex-col p-8">
@@ -60,8 +60,8 @@ export default function Agents() {
       {/* AGENTS IN MARKETPLACE */}
       <h2 className="text-gray-500 py-12">Popular Agents Near Me - San Francisco</h2>
       <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {marketplaceAgents.map((person) => (
-        <li key={person.name} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+      {marketplaceAgents.map((person, i) => (
+        <li key={`${person.name}-${i}`} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
           <div className="flex w-full items-center justify-between space-x-6 p-6">
             <div className="flex-1 truncate">
               <div className="flex items-center space-x-3">
