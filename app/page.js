@@ -5,16 +5,19 @@ import {
     ChartPieIcon,
     FolderIcon,
     UsersIcon,
+    HomeIcon,
   } from '@heroicons/react/24/outline'
 import LeftPanel from './left-panel.js'
 import RightPanel from './right-panel.js'
+import About from '@/pages/About.js'
 import Agents from '../pages/Agents.js'
 import AgentBuilder from '../pages/AgentBuilder.js'
 import Runs from '../pages/Runs.js'
 import Evals from '../pages/Evals.js'
 
 const navigation = [
-    { name: 'Agents', href: '/agents', icon: UsersIcon, current: true, component: Agents },
+    { name: 'About', href: '/', icon: HomeIcon, current: true, component: About },
+    { name: 'Agents', href: '/agents', icon: UsersIcon, current: false, component: Agents },
     { name: 'Agent Builder', href: '/agent-builder', icon: UsersIcon, current: false, component: AgentBuilder },
     { name: 'Runs', href: '/runs', icon: FolderIcon, current: false, component: Runs },
     { name: 'Evals', href: '/evals', icon: ChartPieIcon, current: false, component: Evals },
